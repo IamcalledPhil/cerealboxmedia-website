@@ -26,6 +26,10 @@
     margin: 1rem;
 }
 
+.nav-button:hover {
+    cursor: pointer;
+}
+
 .landing-logo {
     width: 25vw;
     margin: auto auto 3em auto;

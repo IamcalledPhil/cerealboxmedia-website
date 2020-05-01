@@ -1,0 +1,59 @@
+.top-bar {
+    position: absolute;
+    font-size: 3rem;
+    top: 0.5rem;
+    left: 0.5rem;
+}
+
+.nav-button {
+    float: left;
+    margin: 1rem;
+}
+
+.nav-button:hover {
+    cursor: pointer;
+}
+
+
+.blog-index-page-content {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.blog-index-page-right, .blog-index-page-left {
+    height: 100vh;
+    width: 100vw;
+}
+
+.blog-index-page-right, .blog-index-page-left {
+    width: 70vw;
+    background-color: black;
+    margin: 0 auto;
+}
+
+.blog-index-page-right {
+    transform: skewX(-10deg);
+}
+
+.blog-index-page-left {
+    transform: skewX(10deg);
+}
+
+.blog-index-top {
+    display: flex;
+}
+
+.blog-index-title {
+    color: white;
+    margin: auto;
+}
+
+ 
+/* mobile */
+@media (max-width: 711px) {
+
+    .hide-on-mobile {
+        display: none;
+    }
+}
