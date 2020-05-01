@@ -51,6 +51,7 @@
     width: 100%;
     grid-area: 1 / 1;
     overflow: hidden;
+    direction: rtl;
 }
 
 .featured-right {
@@ -75,5 +76,30 @@
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);    left: 25%;
     background-color: white;
-    padding: 2em;
+    padding: 2em 5vw;
+}
+
+ 
+/* mobile */
+@media (max-width: 711px) {
+    .landing-logo {
+        width: 70vw;
+    }
+
+    .featured-image {
+        grid-area: 1 / 1 / 1 / 3;
+    }
+
+    .hide-on-mobile {
+        display: none;
+    }
+
+    .featured-text-container {
+        width: 60vw;
+        height: 70%;
+        overflow-y: auto;
+        left: 7.5vw;
+        padding: 2em 10vw;
+    }
+
 }
