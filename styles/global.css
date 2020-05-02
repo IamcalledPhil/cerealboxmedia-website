@@ -1,8 +1,17 @@
-p, a, button {
+p, h4, a, button {
     font-family: 'Lato', sans-serif;
 }
 
-h1, h2, h3,  h4 {
+h4 {
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+h1, h2, h3 {
     font-family: 'DM Serif Text', serif;
     font-style: 'regular';
+}
+
+h1 {
+    font-size: 3rem;
 }
