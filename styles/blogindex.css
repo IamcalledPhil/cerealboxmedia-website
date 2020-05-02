@@ -24,12 +24,14 @@
 .blog-index-page-right, .blog-index-page-left {
     height: 100vh;
     width: 100vw;
+    color: white;
 }
 
 .blog-index-page-right, .blog-index-page-left {
     width: 70vw;
     background-color: black;
     margin: 0 auto;
+    position: relative;
 }
 
 .blog-index-page-right {
@@ -49,6 +51,65 @@
     margin: auto;
 }
 
+.blog-index-article-description {
+    width: 50vh;
+    position: absolute;
+    top: 75%;
+    max-width: 50vh;
+    text-align: center;
+}
+
+.blog-index-page-right .blog-index-article-description {
+    transform-origin: top left;
+    left: 1em;
+    transform: rotate(270deg);
+}
+
+.blog-index-page-left .blog-index-article-description {
+    transform-origin: top right;
+    right: 1em;
+    transform: rotate(90deg);
+}
+
+
+/* unskew the text so it isn't unaturally stanted */
+.blog-index-page-right .blog-index-article-description p {
+    transform:  skewX(-10deg);
+}
+
+.blog-index-page-left .blog-index-article-description p {
+    transform:  skewX(10deg);
+}
+
+.blog-index-page-left .blog-index-article-img {
+    position: absolute;
+    left: 0px;
+}
+
+.blog-index-page-right .blog-index-article-img {
+    position: absolute;
+    right: 0px;
+}
+
+.blog-index-page-left .blog-index-article-img img {
+    transform:  skewX(-10deg) translateX(-25%);
+}
+
+.blog-index-page-right .blog-index-article-img img {
+    transform:  skewX(10deg);
+}
+
+.blog-index-article-img img {
+    width: 90vw;
+    position: relative;
+}
+
+.blog-index-article-img {
+    overflow: hidden;
+    width: 60vw;
+    height: 50vh;
+    top: 25%;
+}
  
 /* mobile */
 @media (max-width: 711px) {
