@@ -14,27 +14,7 @@
     justify-content: center;
 }
 
-.top-bar {
-    position: absolute;
-    font-size: 3rem;
-    top: 0.5rem;
-    left: 0.5rem;
-    background-color: white;
-    border: none;
-}
 
-.top-bar:focus {
-    outline: 0;
-}
-
-.nav-button {
-    float: left;
-    margin: 1rem;
-}
-
-.nav-button:hover {
-    cursor: pointer;
-}
 
 .landing-logo {
     width: 25vw;
@@ -87,6 +67,12 @@
     transform: translateY(-50%);    left: 25%;
     background-color: white;
     padding: 2em 5vw;
+    color: black;
+    transition: padding 0.2s;
+}
+
+.featured-text-container:hover {
+    padding: 2em 4vw 2em 6vw;
 }
 
  

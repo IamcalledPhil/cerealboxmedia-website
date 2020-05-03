@@ -1,65 +1,95 @@
-/* The sidebar menu */
+.top-bar {
+    position: absolute;
+    font-size: 3rem;
+    top: 0.5rem;
+    left: 0.5rem;
+    background-color: white;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.top-bar:focus {
+    outline: 0;
+}
+
+.nav-button {
+    float: left;
+    margin: 1rem;
+}
+
+.top-bar:hover {
+    cursor: pointer;
+    background-color: rgb(212, 212, 212);
+}
+
 .sidebar {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
+    height: 100%;
+    width: 0; 
+    position: fixed; 
+    z-index: 2;
     top: 0;
     left: 0;
-    background-color: black;
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+    background-color: #323232;
+    overflow-x: hidden; 
+    padding-top: 60px; 
+    transition: 0.5s; 
   }
   
-  /* The sidebar links */
   .sidebar a, .sidebar button {
-    padding: 8px 8px 8px 32px;
+    padding: 10px 8px 10px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: white;
     display: block;
     transition: 0.3s;
     background: none;
     border: none;
+    width: 100%;
+    text-align: left;
   }
+
   
-  /* When you mouse over the navigation links, change their color */
   .sidebar a:hover, .sidebar button:hover {
-    color: #f1f1f1;
+    background-color: black;
     cursor: pointer;
   }
+
+  .sidebar a:focus, .sidebar button:focus {
+    outline: 0;
+  }
   
-  /* Position and style the close button (top right corner) */
   .sidebar .closebtn {
     position: absolute;
     top: 0;
-    right: 25px;
+    right: 15px;
     font-size: 36px;
     margin-left: 50px;
+    color: white;
+    width: fit-content;
+    padding: 8px 20px;
   }
   
-  
-  .top-bar:hover {
-    background-color: rgb(212, 212, 212);
-  }
 
   .submenu a{
-      background-color: grey;
-      color: black;
+      background-color: #161616;
+      color: white;
+      padding: 10px 8px 10px 45px;
+      font-size: 18px;
+    }
 
-  }
-
-  .submenu {
-      display: none;
-  }
-
-  .visible {
-      display: block;
+  .screen-overlay {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      opacity: 50%;
+      background-color: black;
+      z-index: 1;
   }
   
+  .hidden {
+    display: none;
+}
   
-  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
   @media screen and (max-height: 450px) {
     .sidebar {padding-top: 15px;}
     .sidebar a {font-size: 18px;}

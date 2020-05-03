@@ -4,15 +4,31 @@
 <title>Cereal Box Media</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="text/javascript" src="scripts/sidenav.js"></script>
+<script type="text/javascript" src="scripts/animations.js"></script>
 <link rel="stylesheet" href="/styles/footer.css">
 <link rel="stylesheet" href="/styles/blogpage.css">
 <link rel="stylesheet" href="/styles/global.css">
+<link rel="stylesheet" href="/styles/sidenav.css">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <body>
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="/">Home</a>
+        <button onclick="toggleElement('blog')">Blog</button>
+        <div id="blog" class="submenu hidden">
+            <a href="/blogindex">Python</a>
+            <a href="/blogindex">Amsterdam</a>
+            <a href="/blogindex">Ma Berries</a>
+        </div>
+      </div>
+      <div id="screen-overlay" class="screen-overlay hidden" onclick="closeNav()"></div>
+
     <section class="blog-page-content">
         <div class="blog-page-initial">
-            <div class= "top-bar">
+            <div class= "top-bar" onclick="openNav()">
                 <i class="fa fa-bars nav-button"></i>
             </div>
             <a class="home-logo" href="/">
@@ -23,7 +39,6 @@
             </div>
         </div>
         <div class="blog-article">
-            <div class="article-container">
                 <h1>Article One</h1>
                 <img class="linking-lines" src="res/svg/lines-right.svg"/>
                 <h4>12/05/2020</h4>
@@ -63,5 +78,6 @@
             
         </div>
     </footer>
+
 </body>
 </html>

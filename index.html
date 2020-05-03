@@ -5,6 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="text/javascript" src="scripts/sidenav.js"></script>
+<script type="text/javascript" src="scripts/animations.js"></script>
 <link rel="stylesheet" href="/styles/footer.css">
 <link rel="stylesheet" href="/styles/index.css">
 <link rel="stylesheet" href="/styles/global.css">
@@ -16,14 +17,14 @@
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="/">Home</a>
-        <button onclick="showElement('blog')">Blog</button>
-        <div id="blog" class="submenu">
+        <button onclick="toggleElement('blog')">Blog</button>
+        <div id="blog" class="submenu hidden">
             <a href="/blogindex">Python</a>
             <a href="/blogindex">Amsterdam</a>
             <a href="/blogindex">Ma Berries</a>
-
         </div>
       </div>
+      <div id="screen-overlay" class="screen-overlay hidden" onclick="closeNav()"></div>
 
     <main class="wrapper">
         <section class="landing-page-content">
@@ -34,30 +35,37 @@
                 <img class="landing-logo" src="res/svg/cerealboxlogo.svg"/>
                 <p class="landing-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut </p>
             </div>
-            <div class="landing-page-featured">
-                <div class="featured-text-container">
-                    <h3>The first article</h3>
-                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus</p>
+            <a href="blogpage.html">
+                <div class="landing-page-featured">
+                    <a href="blogpage.html">
+                        <div class="featured-text-container">
+                            <h3>The first article</h3>
+                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus</p>
+                        </div>
+                    </a>
+                    <div class="featured-left featured-image">
+                        <img  src="res/jpg/cecilia-par-YUg5RwlnMKc-unsplash.jpg"/>
+                    </div>
+                    <div class="featured-right hide-on-mobile">
+                        <img class="featured-background" src="res/svg/parrelelogram-right.svg"/>
+                    </div>
                 </div>
-                <div class="featured-left featured-image">
-                    <img  src="res/jpg/cecilia-par-YUg5RwlnMKc-unsplash.jpg"/>
+            </a>
+ 
+                <div class="landing-page-featured">
+                    <a href="blogpage.html">
+                        <div class="featured-text-container">
+                            <h3>The second article</h3>
+                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus</p>
+                        </div>
+                    </a>
+                    <div class="featured-right featured-image">
+                        <img  src="res/jpg/cecilia-par-YUg5RwlnMKc-unsplash.jpg"/>
+                    </div>
+                    <div class="featured-left hide-on-mobile">
+                        <img class="featured-background" src="res/svg/parrelelogram-right.svg"/>
+                    </div>
                 </div>
-                <div class="featured-right hide-on-mobile">
-                    <img class="featured-background" src="res/svg/parrelelogram-right.svg"/>
-                </div>
-            </div>
-            <div class="landing-page-featured">
-                <div class="featured-text-container">
-                    <h3>The second article</h3>
-                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus</p>
-                </div>
-                <div class="featured-right featured-image">
-                    <img  src="res/jpg/cecilia-par-YUg5RwlnMKc-unsplash.jpg"/>
-                </div>
-                <div class="featured-left hide-on-mobile">
-                    <img class="featured-background" src="res/svg/parrelelogram-right.svg"/>
-                </div>
-            </div>
         </section>
 
         <footer class="main-footer">
