@@ -14,8 +14,6 @@
     justify-content: center;
 }
 
-
-
 .landing-logo {
     width: 25vw;
     margin: auto auto 3em auto;
@@ -26,7 +24,30 @@
     margin: 1em auto auto auto;
 }
 
+@keyframes fade {
+    from { opacity: 1.0; }
+    55% { opacity: 0.2; }
+    to { opacity: 1.0; }
+}                                                                                                                                                                                                                                  
 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    55% { opacity: 0.2; }
+    to { opacity: 1.0; }
+}
+
+.scrolldown-prompt {
+    font-size: 3rem;
+    margin-bottom: 1em;
+    animation:fade 1.5s infinite;
+    -webkit-animation:fade 1.5 infinite;
+    width: fit-content;
+    margin: 1em auto;
+}
+
+.scrolldown-prompt:hover {
+    cursor: pointer;
+}
 
 .landing-page-featured {
     height: 100vh;
