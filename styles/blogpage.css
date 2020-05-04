@@ -92,3 +92,16 @@
         width: 20vw;
     }
 }
+
+/* Ipad */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)  { 
+    .blog-page-initial {
+        height: fit-content;
+    }
+
+    .blog-page-header-image {
+        height: fit-content;
+    }
+}
