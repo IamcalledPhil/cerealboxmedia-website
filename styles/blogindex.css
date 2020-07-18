@@ -31,6 +31,8 @@
 .blog-index-title {
     color: white;
     margin: auto;
+    padding: 0.5em;
+    text-align: center;
 }
 
 .blog-index-article-description, .blog-index-article-date {
