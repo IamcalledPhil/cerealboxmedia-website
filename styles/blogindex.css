@@ -3,127 +3,104 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-}
-
-.blog-index-page-right, .blog-index-page-left {
-    height: 100vh;
-    color: white;
-    width: 70vw;
-    background-color: black;
-    margin: 0 auto;
-    position: relative;
+    text-align: center;
 }
 
 
-
-.blog-index-page-right {
-    transform: skewX(-10deg);
+.articles-container {
+    margin: 1em 0;
+    width: 100%;
+    min-height: 100vh;
 }
-
-.blog-index-page-left {
-    transform: skewX(10deg);
-}
-
-.blog-index-top {
+.articles {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1em;
+    height: min-content;
+    width: 100%;
 }
 
-.blog-index-title {
-    color: white;
-    margin: auto;
-    padding: 0.5em;
+.article-card {
+    width: 14em;
+    height: 8em;
     text-align: center;
-}
-
-.blog-index-article-description, .blog-index-article-date {
-    width: 50vh;
-    position: absolute;
-    top: 75%;
-    max-width: 50vh;
-    text-align: center;
-}
-
-.blog-index-article-description {
-    color: white;
-    transition: top 0.3s;
-}
-
-.blog-index-page-right:hover a .blog-index-article-description,
-.blog-index-page-left:hover a .blog-index-article-description{
-    top: 72%;
-}
-
-.blog-index-article-date {
-    color: black;
-    font-weight: 600;
-}
-
-.blog-index-page-right .blog-index-article-description {
-    transform-origin: top left;
-    left: 1em;
-    transform: rotate(270deg);
-}
-
-.blog-index-page-left .blog-index-article-description {
-    transform-origin: top right;
-    right: 1em;
-    transform: rotate(90deg);
-}
-
-.blog-index-page-right .blog-index-article-date {
-    transform-origin: top left;
-    left: -3em;
-    transform: rotate(270deg);
-}
-
-.blog-index-page-left .blog-index-article-date {
-    transform-origin: top right;
-    right: -3em;
-    transform: rotate(90deg);
-}
-
-
-/* unskew the text so it isn't unaturally stanted */
-.blog-index-page-right a .blog-index-article-description h4, 
-.blog-index-page-right .blog-index-article-date p {
-    transform:  skewX(-10deg);
-}
-
-.blog-index-page-left a .blog-index-article-description h4
-.blog-index-page-right .blog-index-article-date p {
-    transform:  skewX(10deg);
-}
-
-.blog-index-page-left .blog-index-article-img {
-    position: absolute;
-    left: 0px;
-}
-
-.blog-index-page-right .blog-index-article-img {
-    position: absolute;
-    right: 0px;
-}
-
-.blog-index-page-left .blog-index-article-img img {
-    transform:  skewX(-10deg) translateX(-25%);
-}
-
-.blog-index-page-right .blog-index-article-img img {
-    transform:  skewX(10deg);
-}
-
-.blog-index-article-img img {
-    width: 90vw;
+    padding: 2em;
+    margin: 1em;
     position: relative;
+    -webkit-box-shadow: 4px 6px 14px 0px rgba(0,0,0,0.34);
+    -moz-box-shadow: 4px 6px 14px 0px rgba(0,0,0,0.34);
+    box-shadow: 4px 6px 14px 0px rgba(0,0,0,0.34);
+    overflow: hidden; /* Allows us to slide the panels outside the container without them showing */
 }
 
-.blog-index-article-img {
-    overflow: hidden;
-    width: 55vw;
-    height: 70vh;
-    top: 15%;
-    transition: top 0.4s;
+.curtain__wrapper {
+    width: 100%;
+    height: 100%;
+  }
+        
+  .curtain__panel {
+    background: orange;
+    width: 50%; /* Each panel takes up half the container */
+    height: 100vh; /* Used for demo purposes */
+    float: left; /* Makes sure panels are side-by-side */
+    position: relative; /* Needed to define the z-index */
+    z-index: 2; /* Places the panels in front of the prize */
+    transition: all 1s ease-out; /* Animates the sliding transition */
+  }
+  
+/* Slide the panel to the left out of the container */
+.curtain__panel--left {
+    transform: translateX(-100%);
+  }
+  
+  /* Slide the panel to the right out of the container */
+  .curtain__panel--right {
+    transform: translateX(100%);
+  }
+    
+  .curtain__prize {
+    background: #333;
+    position: absolute; /* Forces the prize position into the container start */
+    z-index: 1; /* Places the prize behind the panels, which are z-index 2 */
+    width: 100%;
+    height: 100%;
+  }
+
+  input[type=checkbox] {
+    position: absolute; /* Force the checkbox at the start of the container */
+    cursor: pointer; /* Indicate the curtain is clickable */
+    width: 100%; /* The checkbox is as wide as the component */
+    height: 100%; /* The checkbox is as tall as the component */
+    z-index: 100; /* Make sure the checkbox is on top of everything else */
+    opacity: 0; /* Hide the checkbox */
+  }
+
+  /* Slide the first panel in */
+input[type=checkbox]:checked ~ div.curtain__panel--left {
+    transform: translateX(0);
+  }
+          
+  /* Slide the second panel in */
+  input[type=checkbox]:checked ~ div.curtain__panel--right {
+    transform: translateX(0);
+  }
+
+.article-card:hover {
+    cursor: pointer;
 }
+
+.article-card img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+}
+
  
 /* mobile */
 @media (max-width: 711px) {
