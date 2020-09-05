@@ -26,7 +26,6 @@
     width: 14em;
     height: 8em;
     text-align: center;
-    padding: 2em;
     margin: 1em;
     position: relative;
     -webkit-box-shadow: 4px 6px 14px 0px rgba(0,0,0,0.34);
@@ -38,16 +37,17 @@
 .curtain__wrapper {
     width: 100%;
     height: 100%;
+    position: absolute;
   }
         
   .curtain__panel {
-    background: orange;
+    background: grey;
+    height: 100%;
     width: 50%; /* Each panel takes up half the container */
-    height: 100vh; /* Used for demo purposes */
     float: left; /* Makes sure panels are side-by-side */
     position: relative; /* Needed to define the z-index */
     z-index: 2; /* Places the panels in front of the prize */
-    transition: all 1s ease-out; /* Animates the sliding transition */
+    transition: all .3s ease-out; /* Animates the sliding transition */
   }
   
 /* Slide the panel to the left out of the container */
@@ -68,23 +68,18 @@
     height: 100%;
   }
 
-  input[type=checkbox] {
-    position: absolute; /* Force the checkbox at the start of the container */
-    cursor: pointer; /* Indicate the curtain is clickable */
-    width: 100%; /* The checkbox is as wide as the component */
-    height: 100%; /* The checkbox is as tall as the component */
-    z-index: 100; /* Make sure the checkbox is on top of everything else */
-    opacity: 0; /* Hide the checkbox */
-  }
-
   /* Slide the first panel in */
-input[type=checkbox]:checked ~ div.curtain__panel--left {
+  .article-card:hover > .curtain__wrapper > .curtain__panel--left {
     transform: translateX(0);
   }
           
   /* Slide the second panel in */
-  input[type=checkbox]:checked ~ div.curtain__panel--right {
+  .article-card:hover > .curtain__wrapper > .curtain__panel--right {
     transform: translateX(0);
+  }
+
+  .article-card:hover > p {
+    opacity: 1;
   }
 
 .article-card:hover {
@@ -99,6 +94,30 @@ input[type=checkbox]:checked ~ div.curtain__panel--left {
     top: 0;
     left: 0;
     opacity: 0.3;
+}
+
+.article-card h2, .article-card p {
+    z-index: 3;
+    position: absolute;
+}
+
+.article-card h2 {
+    left: 0;
+    right: 0;
+    top: 2rem;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.article-card p {
+    left: 0;
+    right: 0;
+    top: 4rem;
+    width: 50%;
+    margin: 0 auto;
+    opacity: 0;
+    transition: all .3s ease-out; 
+
 }
 
  
