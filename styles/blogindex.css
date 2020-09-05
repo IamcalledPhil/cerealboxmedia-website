@@ -15,7 +15,7 @@
 .articles {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: left;
     flex-wrap: wrap;
     padding: 1em;
     height: min-content;
@@ -23,8 +23,9 @@
 }
 
 .article-card {
-    width: 14em;
-    height: 8em;
+    color: black;
+    width: 30vw;
+    height: 20vw;
     text-align: center;
     margin: 1em;
     position: relative;
@@ -41,23 +42,24 @@
   }
         
   .curtain__panel {
-    background: grey;
+    transform:  skewX(15deg);
+    background-color: black;
     height: 100%;
-    width: 50%; /* Each panel takes up half the container */
+    width: 70%; /* Each panel takes up half the container */
     float: left; /* Makes sure panels are side-by-side */
-    position: relative; /* Needed to define the z-index */
+    position: absolute; /* Needed to define the z-index */
     z-index: 2; /* Places the panels in front of the prize */
     transition: all .3s ease-out; /* Animates the sliding transition */
   }
   
 /* Slide the panel to the left out of the container */
 .curtain__panel--left {
-    transform: translateX(-100%);
+    right: 120%;
   }
   
   /* Slide the panel to the right out of the container */
   .curtain__panel--right {
-    transform: translateX(100%);
+    left: 120%;
   }
     
   .curtain__prize {
@@ -70,16 +72,21 @@
 
   /* Slide the first panel in */
   .article-card:hover > .curtain__wrapper > .curtain__panel--left {
-    transform: translateX(0);
-  }
+    right: 40%;
+}
           
   /* Slide the second panel in */
   .article-card:hover > .curtain__wrapper > .curtain__panel--right {
-    transform: translateX(0);
+    left: 40%;
   }
 
   .article-card:hover > p {
     opacity: 1;
+    color: white
+  }
+
+  .article-card:hover > h2 {
+    color: white
   }
 
 .article-card:hover {
@@ -117,7 +124,6 @@
     margin: 0 auto;
     opacity: 0;
     transition: all .3s ease-out; 
-
 }
 
  
@@ -126,5 +132,10 @@
 
     .hide-on-mobile {
         display: none;
+    }
+
+    .article-card {
+        width: 80vw;
+        height: 50vw;
     }
 }
